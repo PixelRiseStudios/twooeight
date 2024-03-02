@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <title>Sourav</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            background-image: url("https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+        }
+
+        *::selection {
+            background-color: black;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            background:#fff;
+        }
+
+        .left {
+            font-weight: 600;
+        }
+
+        .right a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            padding: 10px;
+        }
+
+        .right {
+            margin-right: 30px;
+            font-size: xx-large;
+            cursor: pointer;
+        }
+
+        .nav-bar {
+            margin: 0;
+            display: none;
+            height: 100vh;
+            width: 100%;
+            background-color: white;
+            text-align: right;
+            padding-right: 20px;
+            font-size: xx-large;
+            font-weight: 900;
+        }
+        .nav-bar ul {
+            padding: 15px 20px;
+            list-style-type: none;
+        }
+        .block {
+            display: block;
+        }
+
+        .main {
+            background-position: center;
+            background-size: cover;
+            padding: 15% 0 15% 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: aqua; */
+            color: white;
+            text-align: center;
+            box-shadow: inset 100px 100px 400px black;
+        }
+
+        .h5 {
+            position: relative;
+            top: 30%;
+            left: 50%;
+            border-radius: 12px;
+            transform: translate(-50%);
+            width: 200px;
+            background-color: rgba(214, 212, 212, 0.486);
+            padding: 10px 0 10px 0;
+        }
+
+        h1 {
+            margin-top: 25px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .main button {
+            margin-top: 20px;
+            padding: 14px;
+            border: 1px solid transparent;
+            background-color: black;
+            border-radius: 19px;
+            color: white;
+        }
+
+        .cat-cloths {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            color: black;
+            background: #fff;
+        }
+
+        .cat-cloths p {
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .collection {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 5%;
+        }
+
+        .collection .left {
+            height: 80vh;
+            width: 60%;
+            padding: 10px;
+            /* background-color: aquamarine; */
+        }
+
+        .left-card-main {
+            height: 100%;
+            /* width: 100%; */
+            display: flex;
+            padding-top: 10px;
+        }
+
+        .collection .left-card1 {
+            height: 50%;
+            /* background-color: red; */
+        }
+
+        .collection .left-card2 {
+            width: 50%;
+            height: 50%;
+            /* background-color: blue; */
+            margin: 0 10px 0 0;
+        }
+
+        .collection .left-card3 {
+            width: 50%;
+            height: 50%;
+            /* background-color: rgb(18, 241, 85); */
+        }
+
+        .collection .right {
+            height: 80vh;
+            width: 40%;
+            /* background-color: bisque; */
+            padding: 10px;
+        }
+
+        .right .right-card {
+            width: 100%;
+            height: 100%;
+            /* padding-top: 10px;     */
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .data-cont {
+            margin-top: -200px;
+            color: white;
+            /* z-index: 9; */           
+             padding: 10px;
+        }
+        .data-cont button {
+            font-weight: 600;
+            color: white;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 15px;
+            background-color: transparent;
+            margin-top: 6px;
+        }
+
+        .title-cet {
+            background-color: #fff;
+            width: 100%;
+            height: 20vh;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .menu {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .menu button {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 10px 15px;
+            border-radius: 15px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            /* background-color: rgb(212, 191, 131); */
+        }
+
+        .menu button:focus {
+            background-color: rgb(214, 199, 132);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .matrial-box {
+            background-color: #fff;
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .matrial-box .card {
+            width: 250px;
+            border: 1px solid rgb(207, 201, 201);
+            border-radius: 12px;
+            transition: 600ms;
+        }
+
+        .matrial-box .card img {
+            width: 100%;
+        }
+
+        .matrial-box .card p {
+            margin-top: -16px;
+            padding-left: 10px;
+        }
+
+        .matrial-box .card h3 {
+            margin: 1px;
+            padding-left: 8px;
+        }
+
+        .matrial-box .card h4 {
+            margin: 9px 0 15px 0;
+            padding-left: 10px;
+        }
+
+        .matrial-box .card:hover {
+            transform: scale(1.1);
+        }
+
+        .featured {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 90vh;
+            /* margin-top: 50px; */
+        }
+
+        .featured button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 15px;
+            border: 1px solid transparent;
+            font-weight: 500;
+        }
+
+        .featured h2 {
+            color: white;
+        }
+
+        .featured-1 {
+            background-image: url("https://wwd.com/wp-content/uploads/2022/02/Bottega_Veneta_SF_6620.jpg?crop=0px%2C645px%2C5504px%2C3078px&resize=1000%2C563");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            width: 40%;
+            padding: 240px 10px 10px 10px;
+            border-radius: 15px;
+            box-shadow: inset 100px 70px 100px black;
+        }
+
+        .featured-2 {
+            background-image: url("https://footwearnews.com/wp-content/uploads/2020/02/simone-sniekers-in-dries-van-noten-feature.jpg?w=600&h=400&crop=1");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            width: 40%;
+            padding: 240px 10px 10px 10px;
+            border-radius: 15px;
+            box-shadow: inset 100px 70px 100px black;
+        }
+
+        .sale-card {
+            background-color: #fff;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: -30px;
+        }
+
+        .sale-card-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 85%;
+        }
+
+        .sale-card-left {
+            height: 250px;
+            padding: 23px;
+            border-radius: 15px 0 0 15px;
+            background-color: #cfcbba;
+        }
+
+        .sale-card-left button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            font-weight: 500;
+            border: 1px solid transparent;
+            border-radius: 12px;
+        }
+
+        .sale-card img {
+            width: 241px;
+            height: 250px;
+            border-radius: 0 15px 15px 0;
+        }
+        .footer-main {
+            display: flex;
+            background:#000;
+            color:#fff;
+        }
+        footer {
+            margin-top: 30px;
+            background-color: #000;
+        }
+        .footer-main {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 30px 0;
+            justify-content: space-evenly;
+            background:#000;
+            color:#fff;
+        }
+        .logo-section {
+            width: 163px;
+            font-weight: 400;
+        }
+        .div-footer-comp {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .div-footer-comp i {
+            color: #fff;
+            font-size: 25px;
+        }
+        .shop-sec li {
+          list-style-type: none;   
+        }
+        .shop-sec a      {
+            text-decoration: none;
+            color:#fff;
+        }
+        .shop-sec h5 {
+            color: #c7c1c1;
+        }
+        .copyright {
+            color: #fff;
+            padding: 0 10%;
+            margin: 15px 10px;
+        }
+        .copyright a {
+            text-decoration: none;
+            color: #c7c1c1;
+        }
+        @media (max-width:600px) {
+            .matrial-box .card {
+                margin: 10px;
+                width: 185px; 
+                border: 1px solid rgb(207, 201, 201);
+                border-radius: 12px;
+                transition: 600ms;
+            }
+
+            .collection {
+                width: 100%;
+                display: inline;
+                align-items: center;
+                padding: 5%;
+            }
+            .collection .left {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .left-card-main {
+                height: 100%;
+                display: flex;
+                padding-top: 10px;
+            }
+
+            .collection .left-card1 {
+                height: 50%;
+            }
+
+            .collection .left-card2 {
+                width: 50%;
+                height: 40%;
+                margin: 0 10px 0 0;
+                font-size: small;
+            }
+
+            .collection .left-card3 {
+                width: 50%;
+                height: 40%;
+                font-size: small;
+            }
+
+            .collection .right {
+                height: 80vh;
+                width: 100%;
+                padding: 10px;
+                margin-top: -75px;
+            }
+
+            .right .right-card {
+                width: 100%;
+                height: 100%;
+            }
+
+            .title-cet {
+                margin-top: -90px;
+                width: 100%;
+                height: 20vh;
+                text-align: center;
+                padding: 70px 0;
+            }
+
+            .featured {
+                display: block;
+                width: 100%;
+                height: 100%;
+                margin-top: 50px;
+                padding: 0 0 0 2%;
+            }
+
+
+            .featured-1 {
+                background-image: url("https://wwd.com/wp-content/uploads/2022/02/Bottega_Veneta_SF_6620.jpg?crop=0px%2C645px%2C5504px%2C3078px&resize=1000%2C563");
+                background-size: cover;
+                background-position: center;
+                height: 300px;
+                width: 98%;
+                padding: 170px 10px 10px 10px;
+                border-radius: 12px;
+                box-shadow: inset 100px 70px 100px black;
+            }
+
+            .featured-2 {
+                background-image: url("https://footwearnews.com/wp-content/uploads/2020/02/simone-sniekers-in-dries-van-noten-feature.jpg?w=600&h=400&crop=1");
+                background-size: cover;
+                background-position: center;
+                height: 300px;
+                width: 98%;
+                padding: 170px 10px 10px 10px;
+                border-radius: 12px;
+                box-shadow: inset 100px 70px 100px black;
+                margin-top: 10px;
+            }
+
+            .sale-card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sale-card-div {
+                display: block;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20PX;
+                width: 95%;
+            }
+
+            .sale-card-left {
+                height: 200px;
+                padding: 23px;
+                border-radius: 15px;
+            }
+
+            .sale-card-left button {
+                padding: 10px;
+                margin-top: 15px;
+            }
+
+            .sale-card img {
+                display: none;
+            }
+
+            .footer-main {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 30px 0;
+            justify-content: space-evenly;
+            background:#000;
+            color:#fff
+        }
+        .logo-section {
+            width: 163px;
+        }
+        .logo-section p {
+            font-size: 11px;
+        }
+        .shop-sec li {
+          list-style-type: none;   
+        }
+        .shop-sec a      {
+            text-decoration: none;
+            color:#fff;
+        }
+        .shop-sec h5 {
+            color: #c7c1c1; 
+        }
+        .copyright {
+            color: #fff;
+            margin: 15px 10px;
+        }
+        .copyright i {
+            color: #fff;
+            font-size: 20px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <header>
+            <div class="left">
+                <h2>Twoo Eight</h2>
+            </div>
+            <nav>
+                <div class="right">
+                    <p  class="right-btn">&#9869;</p>
+                </div>
+        </header>
+        <div class="nav-bar">
+            <ul>
+                <a href="">
+                    <li>Home <i class="ri-arrow-right-up-line"></i></li>
+                </a>
+                <a href="">
+                    <li>Contact Us <i class="ri-arrow-right-up-line"></i></li>
+                </a>
+                <a href="">
+                    <li>Men's <i class="ri-arrow-right-up-line"></i></li>
+                </a>
+                <a href="">
+                    <li>Women <i class="ri-arrow-right-up-line"></i></li>
+                </a>
+                <a href="">
+                    <li>About Us <i class="ri-arrow-right-up-line"></i></li>
+                </a>
+                <a href="">
+                    <li>Contact Us <i class="ri-arrow-right-up-line"></i></li>
+                </a>
+            </ul>
+            <div style="margin-right : 40px;padding: 0 10px;">
+                <a href=""><i class="ri-instagram-line"></i></a>
+                <a href=""><i class="ri-whatsapp-line"></i></i></a>
+            </div>
+        </div>
+        </nav>
+
+        <div class="main">
+            <h5 class="h5">Experience fashion like before</h5>
+            <h1>Elevate Your Style with StyleHub: Where <br>Fachion Meets Passion</h1>
+            <p>Discover a world of fashion-forward trend, curated collecteion, and timeless <br> pices that inspire.
+                Unlesh your inner fashionista and embark on a hourney of <br> confidence, elegance, and impeccable
+                style.</p>
+            <button>Start Shopping</button>
+        </div>
+        <div class="cat-cloths">
+            <h1>Explore Our Latest Collection For You</h1>
+            <p>Exlplore our latest collection to unlesh your inner fashionista and embark on a <br>
+                journey of confidnce, elegance,and impeccable style.</p>
+        </div>
+        <div class="collection">
+            <div class="left">
+                <div class="left-card1">
+                    <img class="card-img"
+                        src="https://img.freepik.com/premium-photo/passionate-couple-elegant-evening-cool-black-colour-dresses-luxurious-fashion-shot_189959-5979.jpg"
+                        alt="">
+                    <div style="margin-top: -130px;" class="data-cont">
+                        <h1>Collection for Couples</h1>
+                        <p>Introucing out stylish and verstile sheer clergy caped bomber jacket.</p>
+                    </div>
+                </div>
+                <div class="left-card-main">
+                    <div class="left-card2">
+                        <img class="card-img"
+                            src="https://www.realmenrealstyle.com/wp-content/uploads/2023/06/How-To-Style-Leather-Jackets-For-Men.jpg"
+                            alt="">
+                        <div style="margin-top: -140px;" class="data-cont">
+                            <h1>Leather Watch Collection</h1>
+                        </div>
+                    </div>
+                    <div class="left-card3">
+                        <img class="card-img"
+                            src="https://wwd.com/wp-content/uploads/2023/09/best-tote-bags-for-women.jpg?w=911" alt="">
+                        <div style="margin-top: -140px;" class="data-cont">
+                            <h1>New Tote Bags Collection</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div style="font-size: small;" class="right-card">
+                    <img class="card-img"
+                        src="https://i1.adis.ws/i/misspap/bpp04476_black_xl_2?$product_image_main_mobile$&fmt=webp"
+                        alt="">
+                    <div class="data-cont">
+                        <h1>Sheer Bomber Jacket</h1>
+                        <p>Introucing out stylish and verstile sheer clergy caped bomber jacket.</p>
+                        <button>Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title-cet">
+            <h5 class="h5">Updated Trends For You</h5>
+            <h1 style="background-color: #fff;" >Latest Arrivals by Categories</h1>
+        </div>
+        <div class="menu">
+            <ul id="menu">
+                <button class="cupid-blue" href="p1" id="btnOne" onclick="toggle(this)">Shirts</button>
+                <button class="cupid-blue" href="p2" id="btnTwo" onclick="toggle(this)">Shorts</button>
+                <button class="cupid-blue" href="p3" id="btnTwo" onclick="toggle(this)">Jacket</button>
+                <button class="cupid-blue" href="p4" id="btnTwo" onclick="toggle(this)">Hoodies</button>
+            </ul>
+        </div>
+        <div class="div_screen_contents_frame">
+            <div class="page active" id="p1">
+                <section id="pOne">
+                    <div class="matrial-box">
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="page" id="p2">
+                <section id="pTwo">
+                    <div class="matrial-box">
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/870df279-740d-4bbf-bd37-1f958f3e3873/dna-dri-fit-20cm-basketball-shorts-T3HvSb.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Shorts</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="page" id="p3">
+                <section class="icon " id="pTwo">
+                    <div class="matrial-box">
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/jacket/q/h/7/-original-imaghegysjgkr2v5.jpeg?q=90&crop=false"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Jacket</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="page" id="p4">
+                <section class="icon " id="pTwo">
+
+                    <div class="matrial-box">
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://i.ebayimg.com/images/g/6GkAAOSwN5dlCM3w/s-l1200.webp" alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <h3>₹ 600</h3>
+                                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9166ca3b-b9c0-4f31-8b72-0e593a2f1ddc/dri-fit-fitness-t-shirt-PDvL9m.png"
+                                    alt="">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <div>
+                                        <h4>Nike Dri-FIT</h4>
+                                        <p>Men's T-shrit</p>
+                                    </div>
+                                    <i class="ri-shopping-bag-3-line" style="font-size:30px; margin-right: 10px;"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="featured">
+            <div class="featured-1">
+                <h2>Bottega Veneta Women <br>
+                    Exclusice Serice</h2>
+                <a href=""><button>Shop Now <i class="ri-arrow-right-line"></i></button></a>
+            </div>
+            <div class="featured-2">
+                <h2>Street Wear Style Trend <br>Collection</h2>
+                <a href=""><button>Shop Now <i class="ri-arrow-right-line"></i></button></a>
+            </div>
+        </div>
+        <div class="sale-card">
+            <div class="sale-card-div">
+                <div class="sale-card-left">
+                    <h2>Save 50% this Holiday season</h2>
+                    <p>It's time to revamp your fashion game without breaking the bank! Dive into our exclusive 50% off
+                        sale discover unbetable deals on the most coveted styles.</p>
+                    <button>Shop Now <i class="ri-arrow-right-line"></i></button>
+                </div>
+                <div>
+                    <img src="https://www.routeone.co.uk/cdn/shop/products/001098943_1.jpg?v=1611781106&width=1000"
+                        alt="">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="div-footer-comp">
+                <div class="logo-section">
+                    <h2>StyleHub</h2>
+                    <p>Design amazing digital Experience <br> that create more happy in the world.</p>
+                </div>
+                <div>
+                    <a href=""><i class="ri-instagram-line"></i></a>
+                    <a href=""><i class="ri-facebook-circle-fill"></i></i></a>
+                    <a href=""><i class="ri-whatsapp-line"></i></a>
+                </div>
+            </div>
+           <div class="footer-main">
+
+
+            <div class="shop-sec">
+                <h5>Shop</h5>
+                <ul>
+                    <a href=""><li>Men's Product</li></a>
+                    <a href=""><li>Women's Product</li></a>
+                    <a href=""><li>Winter Edition</li></a>
+                    <a href=""><li>Accessories</li></a>
+                    <a href=""><li>Discounts</li></a>
+                </ul>
+            </div>
+            <div class="shop-sec">
+                <h5>Shop</h5>
+                <ul>
+                    <a href=""><li>Men's Product</li></a>
+                    <a href=""><li>Women's Product</li></a>
+                    <a href=""><li>Winter Edition</li></a>
+                    <a href=""><li>Accessories</li></a>
+                    <a href=""><li>Discounts</li></a>
+                </ul>
+            </div>
+            <div class="shop-sec">
+                <h5>Shop</h5>
+                <ul>
+                    <a href=""><li>Men's Product</li></a>
+                    <a href=""><li>Women's Product</li></a>
+                    <a href=""><li>Winter Edition</li></a>
+                    <a href=""><li>Accessories</li></a>
+                    <a href=""><li>Discounts</li></a>
+                </ul>
+            </div>
+           </div>
+           <div style="width: 90%;height: 2px;background-color: rgb(214, 214, 214);margin: 0 5%;"></div>
+           <div class="copyright">
+            <p> 2024 <a href="">Pixel Rise Studios.</a> All rights reserved.</p>
+            
+           </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('#main'),
+            smooth: true
+        });
+
+        // this js for the clothes section
+        function toggleDisplay(className, displayState) {
+            var elements = document.getElementsByClassName(className)
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = displayState;
+            }
+        }
+        function toggle() {
+            document.onclick = function (e) {
+                if (e.target.tagName == 'BUTTON') {
+                    var href = e.target.getAttribute("href");
+                    toggleDisplay('page', 'none');
+                    document.getElementById(href).style.display = 'block';
+                }
+            }
+        }
+
+
+        // function menuopen() {
+        // var x = document.querySelector(".nav-bar")
+        // var y = document.querySelector(".right")
+        // var z = 0
+        //     if(z==0){
+        //         x.style.display = "none"
+        //         y.innerHTML = "Open"
+        //         z == 1
+        //     }
+        //     else if (z==1) {
+        //         x.style.display = "none"
+        //         y.innerHTML = "Close"
+        //         z == 0
+        //     }
+
+        const list = document.querySelector('.nav-bar')
+        const btn = document.querySelector('.right-btn');
+        btn.addEventListener('click', () => {
+            if(list.style.display === 'block'){
+                list.style.display = 'none'
+                btn.innerHTML = "&#9869;"
+            }else{
+                list.style.display = 'block'
+                btn.innerHTML = "&#10005;"
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>
